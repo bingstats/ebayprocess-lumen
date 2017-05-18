@@ -38,13 +38,13 @@ class GetItemTransactions extends Command
      */
     public function handle()
     {	
-		$storeName = $this->argument('storeName');
+	$storeName = $this->argument('storeName');
         $storeName = ucfirst($storeName);
-		$storeName = '\App\EbayApi\Stores'.'\\'.$storeName;
-		$store = new $storeName;
+	$storeName = '\App\EbayApi\Stores'.'\\'.$storeName;
+	$store = new $storeName;
         $params['DetailLevel'] = ['ReturnAll'];
-        $params['ItemID']  = '191536087827';
-        $params['TransactionID']  = '1369610621009';
+        $params['ItemID']  = 'xxxxxxxx';
+        $params['TransactionID']  = 'xxxxxxx';
         //$params['NumberOfDays']  = 20;
         $res = EbayApi::getInstance($store)->getItemTransactions($params);
         if($res){
