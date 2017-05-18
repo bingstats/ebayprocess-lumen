@@ -18,11 +18,11 @@ class AddBehavior extends EbayBehavior implements EbayInterface
     public $rules = array(
         array('quantity' => 0), // balance
         array('quantity' => 999,'arrival|than' => 2),
-        array('preview_pic' => 'http://img1.sbzimg.com/images/notavailable.jpg'),
+        array('preview_pic' => 'http://img1.com/images/notavailable.jpg'),
         array('catid' => array(582,585,586,588,590,596,597,602,607,608,609,610,612,613,614,621,627,628,629,666,673,719,767)),
         array('catid' => 683,'maker' => 'Samsung'),
         array('maker' => array('Belkin','Linksys')),
-        array('part' => array('FAN-AM6000','FAN-LGA775','DE468-8770','DE468-8792','DE468-5946','P-XD-2GM','SM-HN101BB')),
+        array('part' => array('part1','part2','part3','part3','part4','part5','part6')),
         array('price' => 10000),
         array('price|lthan' => 0.99),
         array('ship_cost' => 0),
@@ -34,7 +34,7 @@ class AddBehavior extends EbayBehavior implements EbayInterface
         // TODO: Implement run() method.
       $item = new BaseItem($this->store,$part);
       if (!$item->isExistInEwiz()){
-          Log::info('can not get item on ewiz.com,so can not be added');
+          Log::info('can not get item on company.com,so can not be added');
           return false;
       }
       $data = $item->getEwiz();
