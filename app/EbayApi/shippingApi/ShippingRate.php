@@ -14,7 +14,7 @@ use App\EbayApi\ShippingApi\Lib\Util;
 
 class ShippingRate
 {
-    const HOST='http://192.168.10.132/rest/shipping/channel';
+    const HOST='http://chain.com/shipping/channel';
     protected $_data = array();
     protected $_return = null;
     protected $_errorMsg = '';
