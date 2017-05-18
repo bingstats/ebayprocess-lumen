@@ -19,7 +19,7 @@ class Item
      */
     public static function WebInfor($itemid)
     {
-        $url = 'http://vi.raptor.ebaydesc.com/ws/eBayISAPI.dll?ViewItemDescV4&item='.$itemid;
+        $url = 'www.comxxxxxx'.$itemid;
         try{
             $data = self::SBcurl($url);
             $vict       = self::getVict($data);
@@ -85,9 +85,9 @@ class Item
      */
     public static function ApiInfor($itemid, $txn_id)
     {
-        $message = '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns="urn:ebay:apis:eBLBaseComponents" ><soap:Header><RequesterCredentials><eBayAuthToken>AgAAAA**AQAAAA**aAAAAA**tytUWA**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wFk4ugCZWCpg+dj6x9nY+seQ**BKQAAA**AAMAAA**1Sav5ZWONhND9D1LIFUGCiAvKdjipV/L7L+XYUIYvbUWmg/DikXcpk/FL5a2sbocxtDPtpCQOr2ceySawiakNER2UOqG/zdH1ztiwllaA1G8zO7ILJApuOHM4XFKsp4rH1aVdr9CKh35eaNP/3FXtti2jD1mLYvMm7pe2e3af9mw8DeH08nXJZBneAdt+7ACHWb8C3DxJ9h8dHW7ZcEMBannha7p0+H/LtEvMafYLxdoTNezYOoG5YO/T38lEoAPLy+vUWdNplIYb3hcjoD7oMXZL5+ga+PFGc8PDCurtBjTha0+VnUedhsLOSGLgUg/b80kLcRRXO+LFedIL1DRF6e6L5q7umF8RLjVK7lEi1GUtrGA6/kFKjHBEfERogKfKeOsJVnmzd1JuzCDM7/P3tV2iZntvRolZtENLL3y28ToFHI3wsxv6r2DQLAn2wiVAK5/P5boFv+22YYzHIhBTTSjaFrerMOJz5xewyDqCAW1YWArjEot1PdpdHd8/t94V0kOAo7qDks9f2MPx9pylJ315E86DJetAKhlzFRL4tqbH42sEjmTx1jTC5KMu4cP2tuFEuLz0kTzseB1tyiX0pTV6V8tFvNmG2LvQyBXK9oaeKkeD28aU+5PANe5Ik9ea1f6HebbNsMusiBSSWWf8EpL6VSBChg8ibECpJlgJSezOs1I4XlyiFDPCh8JuGs92pxLHEGdObuSKziDiRrm44J4vzMQbYVzqUK3Q5Bb3jLXnPHb0vp2V3uNKQZEjQau</eBayAuthToken><Credentials><AppId>newbiizb4-c7de-4031-ac77-2832e1b86d0</AppId><DevId>e20860aa-646c-42bd-8d21-8ea5650181cc</DevId><AuthCert>b9016415-076e-4776-9465-092d60f1abd4</AuthCert></Credentials></RequesterCredentials></soap:Header><soap:Body><GetItemTransactionsRequest><Version><![CDATA[729]]></Version><ItemID><![CDATA['.$itemid.']]></ItemID><MailMessageType>All</MailMessageType><TransactionID>'.$txn_id.'</TransactionID></GetItemTransactionsRequest></soap:Body></soap:Envelope>';
+        $message = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 
-        $ep = 'https://api.ebay.com/wsapi?callname=GetItemTransactions&siteid=0&appid=newbiizb4-c7de-4031-ac77-2832e1b86d0&version=729&routing=default';
+        $ep = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 
         $ch = curl_init();
         curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,false);
@@ -131,7 +131,7 @@ class Item
     public static function descrypt($data)
     {
         $data   = trim($data);
-        $iv     = self::hex2bin('76ce2539678e53a7c105fc71596bc9411ec9eca07397874ff12b5520d42bca3d');
+        $iv     = self::hex2bin('xxxxxxxxxxxxxxxxxxxxxxxx');
         //since php 5.6,mcrypt_decrypt(): Key of size 26 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported.
         $key    = "Str Key for 9w|z.C03 ebay\0\0\0\0\0\0\0";
 
@@ -190,9 +190,9 @@ class Item
      */
     static function getItem($itemid)
     {
-        $message = '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns="urn:ebay:apis:eBLBaseComponents" ><soap:Header><RequesterCredentials><eBayAuthToken>AgAAAA**AQAAAA**aAAAAA**tytUWA**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wFk4ugCZWCpg+dj6x9nY+seQ**BKQAAA**AAMAAA**1Sav5ZWONhND9D1LIFUGCiAvKdjipV/L7L+XYUIYvbUWmg/DikXcpk/FL5a2sbocxtDPtpCQOr2ceySawiakNER2UOqG/zdH1ztiwllaA1G8zO7ILJApuOHM4XFKsp4rH1aVdr9CKh35eaNP/3FXtti2jD1mLYvMm7pe2e3af9mw8DeH08nXJZBneAdt+7ACHWb8C3DxJ9h8dHW7ZcEMBannha7p0+H/LtEvMafYLxdoTNezYOoG5YO/T38lEoAPLy+vUWdNplIYb3hcjoD7oMXZL5+ga+PFGc8PDCurtBjTha0+VnUedhsLOSGLgUg/b80kLcRRXO+LFedIL1DRF6e6L5q7umF8RLjVK7lEi1GUtrGA6/kFKjHBEfERogKfKeOsJVnmzd1JuzCDM7/P3tV2iZntvRolZtENLL3y28ToFHI3wsxv6r2DQLAn2wiVAK5/P5boFv+22YYzHIhBTTSjaFrerMOJz5xewyDqCAW1YWArjEot1PdpdHd8/t94V0kOAo7qDks9f2MPx9pylJ315E86DJetAKhlzFRL4tqbH42sEjmTx1jTC5KMu4cP2tuFEuLz0kTzseB1tyiX0pTV6V8tFvNmG2LvQyBXK9oaeKkeD28aU+5PANe5Ik9ea1f6HebbNsMusiBSSWWf8EpL6VSBChg8ibECpJlgJSezOs1I4XlyiFDPCh8JuGs92pxLHEGdObuSKziDiRrm44J4vzMQbYVzqUK3Q5Bb3jLXnPHb0vp2V3uNKQZEjQau</eBayAuthToken><Credentials><AppId>newbiizb4-c7de-4031-ac77-2832e1b86d0</AppId><DevId>e20860aa-646c-42bd-8d21-8ea5650181cc</DevId><AuthCert>b9016415-076e-4776-9465-092d60f1abd4</AuthCert></Credentials></RequesterCredentials></soap:Header><soap:Body><GetItemRequest><Version><![CDATA[729]]></Version><ItemID><![CDATA['.$itemid.']]></ItemID><DetailLevel>ReturnAll</DetailLevel></GetItemRequest></soap:Body></soap:Envelope>';
+        $message = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 
-        $ep = 'https://api.ebay.com/wsapi?callname=GetItem&siteid=0&appid=newbiizb4-c7de-4031-ac77-2832e1b86d0&version=729&routing=default';
+        $ep = 'https://api.ebay.com/wsapi?xxxxxxxxxxxxxxxxxxxxxx';
 
         //echo $message."\n";
         $ch = curl_init();
