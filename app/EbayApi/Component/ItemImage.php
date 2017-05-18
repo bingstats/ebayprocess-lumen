@@ -15,9 +15,9 @@ class ItemImage extends EbayComponent
 {
     public $check_type = 'file';
     public $img_server_domain = array(
-        'http://img1.sbzimg.com',
-        'http://img2.sbzimg.com',
-        'http://img3.sbzimg.com',
+        'http://img1.img.com',
+        'http://img2.img.com',
+        'http://img3.img.com',
     );
     public $maxIndex = 3;
     public $domainIndex = 0;
